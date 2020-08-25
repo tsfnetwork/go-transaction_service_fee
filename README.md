@@ -1,4 +1,4 @@
-## Transaction Service Fee Go          https://tsf.io :)
+## Transaction Service Fee
 
 ## Automated development builds
 
