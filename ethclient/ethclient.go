@@ -51,6 +51,17 @@ func NewClient(c *rpc.Client) *Client {
 	return &Client{c}
 }
 
+// ChainId retrieves the hardcoded 56 chain ID
+func (ec *Client) ChainID(ctx context.Context) (*big.Int, error) {
+	var result hexutil.Big
+  result.SetUint64(56)
+	err := ec.c.CallContext(ctx, &result, "eth_chainId")
+	if err != nil {
+		return nil, err
+	}
+	return (*big.Int)(&result), err
+}
+
 // Blockchain Access
 
 // BlockByHash returns the given full block.
