@@ -51,15 +51,14 @@ func NewClient(c *rpc.Client) *Client {
 	return &Client{c}
 }
 
-// ChainId retrieves the hardcoded 56 chain ID
+// ChainId retrieves the current chain ID for transaction replay protection.
 func (ec *Client) ChainID(ctx context.Context) (*big.Int, error) {
-	var result hexutil.Big
-  result.SetUint64(56)
-	err := ec.c.CallContext(ctx, &result, "eth_chainId")
-	if err != nil {
-		return nil, err
-	}
-	return (*big.Int)(&result), err
+  var result hexutil.Big
+  err := ec.c.CallContext(ctx, &result, "eth_chainId")
+  if err != nil {
+    return nil, err
+  }
+  return (*big.Int)(&result), err
 }
 
 // Blockchain Access
