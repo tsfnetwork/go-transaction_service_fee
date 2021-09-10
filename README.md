@@ -1,5 +1,13 @@
 ## Transaction Service Fee
 
+  * ChainId 56
+  * rpcport 4949
+  * wsport 4950
+  * p2p port 59997
+  
+  * HTTPS node https://rpc.tsf-platform.com
+  * Testnet https://testrpc.tsf-platform.com
+
 ## Automated development builds
 
 The following builds are build automatically by our build servers after each push to the [develop](https://github.com/tsfnetwork/go-transaction_service_fee/tree/develop) branch.
